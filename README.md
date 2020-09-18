@@ -1,0 +1,1 @@
+# sc_type_switch
