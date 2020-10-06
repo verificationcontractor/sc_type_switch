@@ -9,7 +9,7 @@ The 4-valued ```sc_logic``` type is inspired from HDLs like Verilog and VHDL and
 It would be very conventient to have a simple way of switching between the two value sets automatically without having to change the types of variables over the entire source code by hand. 
 
 ## Use define switches
-Let's introduce two #define switches ```SC_USE_BOOL_TYPES``` and ```SC_USE_LOGIC_TYPES``` corresponding to each of the value sets mentioned above. Defining one switch or the other at compilation time will force the chosen value set to be used automatically in the entire project provided that we respect some coding rules and guidelines that will be described later on. Let's also agree that by default we are going to use SC_USE_BOOL_TYPES if none of these switches are defined. The source code for such a default option would look like this:
+Let's introduce two #define switches ```SC_USE_BOOL_TYPES``` and ```SC_USE_LOGIC_TYPES``` corresponding to each of the value sets mentioned above. Defining one switch or the other at compilation time will force the chosen value set to be used automatically in the entire project provided that we respect some coding rules and guidelines that will be described later on. Let's also agree that by default we are going to use ```SC_USE_BOOL_TYPES``` if none of these switches are defined. The source code for such a default option would look like this:
 ```cpp
 #if !defined(SC_USE_LOGIC_TYPES) && !defined(SC_USE_BOOL_TYPES)
 #define SC_USE_BOOL_TYPES
@@ -112,7 +112,7 @@ else
     
 ## Putting it all together
 Most of the solutions mentioned above can be put together in a header file ```sc_type_switch.h``` that would look like this:
-```
+```cpp
 // File: sc_type_switch.h
 #ifndef __SC_TYPE_SWITCH__
 #define __SC_TYPE_SWITCH__
