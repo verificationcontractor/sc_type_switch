@@ -331,7 +331,7 @@ int sc_main(int argc, char** argv) {
 }
 ```
 
-The tesbench will drive pulses on the Set and Reset signals to check that the correct values are stored as well as driving both Set and Reset to high to see what value will propagate on the output depending on which value set is chosen for the simulation. Notice how througout the entire code only ```sc_bit_type``` is used for single-bit variables, how only ```sc_1``` and ```sc_0``` are used to represent high and low signal values and how the code portions where X values must be used are isolated with #ifdef statements. This coding style will allow us to easily choose one value set or the other and force its use throughout the entire simulation simply by passing a -D argument to the compiler.
+Notice how througout the entire code only ```sc_bit_type``` is used for single-bit variables, how only ```sc_1``` and ```sc_0``` are used to represent high and low signal values and how the code portions where X values must be used are isolated with #ifdef statements. This coding style will allow us to easily choose one value set or the other and force its use throughout the entire simulation simply by passing a -D argument to the compiler.
 
 Compiling and running with this command ```g++ -o sim -DSC_USE_LOGIC_TYPES -lsystemc sr_latch_example.cpp; ./sim``` will generate this waveform:
 ![picture alt](https://github.com/verificationcontractor/sc_type_switch/blob/master/images/logic_vcd.PNG "latch_logic.vcd")
