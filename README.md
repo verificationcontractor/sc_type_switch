@@ -1,7 +1,7 @@
 # How to switch easily between bool and sc_logic in SystemC
 
 SystemC supports two types of value sets used to model signal levels: 
-* the 4-valued ```sc_logic``` type consisting of values ```SC_LOGIC_0```, ```SC_LOGIC_1, ```SC_LOGIC_X``` and ```SC_LOGIC_Z```
+* the 4-valued ```sc_logic``` type consisting of values ```SC_LOGIC_0```, ```SC_LOGIC_1```, ```SC_LOGIC_X``` and ```SC_LOGIC_Z```
 * the 2-valued ```bool``` type consisting of values ```true``` and ```false```
 
 The 4-valued ```sc_logic``` type is inspired from HDLs like Verilog and VHDL and it's meant to be used mostly in design simulations to detect design bugs such as unconnected ports or ambiguous conditions that lead to X value propagation. While this can be beneficial for verification, it comes with the cost of slowing down simulations. Other times we might not be so concered about ambiguities and connectivity issues and we just want to run fast simulations with the 2-valued ```bool``` value set to test other types of scenarios.
